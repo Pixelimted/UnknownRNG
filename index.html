@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unknown Studios</title>
+  <title>Unknown Studios Web</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -19,6 +19,7 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Outfit', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -95,6 +96,11 @@
       width: 100%;
     }
 
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
     .hero {
       height: 90vh;
       display: flex;
@@ -102,7 +108,6 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 2rem;
       animation: fadeInUp 1.5s ease forwards;
       opacity: 0;
     }
@@ -123,7 +128,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      padding: 4rem 2rem;
       animation: fadeIn 2s ease forwards;
       opacity: 0;
     }
@@ -143,11 +147,6 @@
     .card h3 {
       color: var(--accent);
       margin-bottom: 1rem;
-    }
-
-    .media-section {
-      padding: 4rem 2rem;
-      text-align: center;
     }
 
     .discord-button {
@@ -182,28 +181,23 @@
       }
     }
 
-    .stats-section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .stats-section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-
-    .stats {
-      font-size: 1.2rem;
-      color: var(--text);
-    }
-
     footer {
       text-align: center;
       padding: 2rem;
       background-color: #111118;
       color: #999;
       font-size: 0.9rem;
+    }
+
+    .stats, .media-section, .about-section, .codes-section, .team-section, .credits-section {
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
     }
   </style>
 </head>
@@ -216,27 +210,31 @@
       <a href="#">Home</a>
       <a href="#features">Features</a>
       <a href="#stats">Game Stats</a>
+      <a href="#codes">Codes</a>
+      <a href="#team">Team</a>
+      <a href="#about">About</a>
+      <a href="#credits">Credits</a>
       <a href="#media">Media</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Next-Gen RNG</h2>
-    <p>Get ready to experience a RNG unlike anything you've seen before.</p>
+    <h2>Unknown RNG</h2>
+    <p>Beyond what you'd expect of a RNG game. Fishing, Mining, Rolling, Quests, etc. This is the NEXT-GEN of Roblox RNG's.</p>
   </section>
 
   <section class="cards" id="features">
     <div class="card">
-      <h3>Amazing Cutscenes</h3>
-      <p>Beautiful Cutscenes to keep you attracted.</p>
+      <h3>Cutscenes</h3>
+      <p>We don't just have regular cutscenes. Our Cutscenes will make you want to keep rolling forever.</p>
     </div>
     <div class="card">
-      <h3>Game UI</h3>
-      <p>Complete UI Update. Modern UI for Modern People.</p>
+      <h3>Next-Gen RNG</h3>
+      <p>Our game, Unknown RNG isn't just about rolling. It's about fishing, mining, farming, and other stuff too, so YOU never get bored. </p>
     </div>
     <div class="card">
-      <h3>Game Data</h3>
-      <p>See Unknown RNG's live data.</p>
+      <h3>Live Data</h3>
+      <p>We show the games data, visits, favorites, etc.</p>
     </div>
   </section>
 
@@ -247,9 +245,32 @@
     </div>
   </section>
 
+  <section id="codes" class="codes-section">
+    <h2>Codes</h2>
+    <p>Use these codes in-game:</p>
+    <p><strong>UnknownRNG</strong> – Coins and Potions</p>
+    <p><strong>Comeback2025</strong> – 50,000 Coins + Chance II x5</p>
+    <p><strong>Release</strong> – Universe Potion x2</p>
+  </section>
+
+  <section id="team" class="team-section">
+    <h2>The Team</h2>
+    <p>Meet the developer behind Unknown Studios. The one who is making this all possible.</p>
+  </section>
+
+  <section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>Unknown Studios is dedicated to building an immersive, "Peak" RNG game. Founded in 2025. I, hope to bring joy and to everyone by bringing back Unknown RNG.</p>
+  </section>
+
+  <section id="credits" class="credits-section">
+    <h2>Credits</h2>
+    <p>Created by Pixel, designed with ❤️ by Unknown Studios.</p>
+  </section>
+
   <section class="media-section" id="media">
     <h2>Watch Our Showcase</h2>
-    <a class="discord-button" href="https://www.youtube.com/watch?v=d3xNnLxTBZ0" target="_blank">▶ Watch on YouTube</a>
+    <a class="discord-button" href="https://www.youtube.com/watch?v=kr8XxnOupF8" target="_blank">▶ Watch on YouTube</a>
     <br><br>
     <a class="discord-button" href="https://discord.gg/2pn6VT4vg2" target="_blank">Join our Discord</a>
   </section>
