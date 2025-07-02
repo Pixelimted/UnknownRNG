@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unknown Studios Site</title>
+  <title>Unknown Studios - WalbiX Inspired</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -150,16 +150,6 @@
       text-align: center;
     }
 
-    .media-section iframe {
-      width: 90%;
-      max-width: 800px;
-      height: 450px;
-      border: none;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(0,255,255,0.3);
-      margin-bottom: 2rem;
-    }
-
     .discord-button {
       display: inline-block;
       padding: 1rem 2rem;
@@ -225,33 +215,33 @@
     <nav>
       <a href="#">Home</a>
       <a href="#features">Features</a>
-      <a href="#stats">Game Data</a>
+      <a href="#stats">Game Stats</a>
       <a href="#media">Media</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Unknown Studios</h2>
-    <p>The Official Unknown Studios Website where you can find our Games, Channels, & Servers.</p>
+    <h2>Next-Gen RNG</h2>
+    <p>Get ready to experience a RNG unlike anything you've seen before.</p>
   </section>
 
   <section class="cards" id="features">
     <div class="card">
-      <h3>Cutscenes</h3>
-      <p>Beautiful Cutscenes that make you excited when rolling..</p>
+      <h3>Amazing Cutscenes</h3>
+      <p>Beautiful Cutscenes to keep you attracted.</p>
     </div>
     <div class="card">
-      <h3>New-Gen</h3>
-      <p>A new generation of roblox RNG's.</p>
+      <h3>Game UI</h3>
+      <p>Complete UI Update. Modern UI for Modern People.</p>
     </div>
     <div class="card">
-      <h3>Live Data</h3>
-      <p>We show the game's tracking data, and more!</p>
+      <h3>Game Data</h3>
+      <p>See Unknown RNG's live data.</p>
     </div>
   </section>
 
   <section class="stats-section" id="stats">
-    <h2>Unknown RNG Game Stats</h2>
+    <h2>Unknown RNG Data</h2>
     <div class="stats" id="gameStats">
       Loading stats from Roblox...
     </div>
@@ -259,8 +249,8 @@
 
   <section class="media-section" id="media">
     <h2>Watch Our Showcase</h2>
-    <iframe src="https://www.youtube.com/shorts/1mgnrZ4ORlw" allowfullscreen></iframe>
-    <br />
+    <a class="discord-button" href="https://www.youtube.com/watch?v=d3xNnLxTBZ0" target="_blank">▶ Watch on YouTube</a>
+    <br><br>
     <a class="discord-button" href="https://discord.gg/2pn6VT4vg2" target="_blank">Join our Discord</a>
   </section>
 
@@ -278,7 +268,9 @@
     async function fetchRobloxGameStats() {
       try {
         const response = await fetch('https://games.roblox.com/v1/games?universeIds=5003731164');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
+        console.log("Game data:", data);
         if (data.data && data.data.length > 0) {
           const game = data.data[0];
           document.getElementById('gameStats').innerHTML = `
@@ -287,8 +279,11 @@
             <p><strong>Visits:</strong> ${game.visits.toLocaleString()}</p>
             <p><strong>Favorites:</strong> ${game.favoritedCount.toLocaleString()}</p>
           `;
+        } else {
+          document.getElementById('gameStats').textContent = 'Game not found.';
         }
       } catch (err) {
+        console.error('Failed to fetch game stats:', err);
         document.getElementById('gameStats').textContent = 'Failed to load game data.';
       }
     }
